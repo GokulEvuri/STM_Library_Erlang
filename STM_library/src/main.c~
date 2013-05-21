@@ -1,0 +1,42 @@
+// Example module to show initiation of USB_API functions to send and receive single byte values from SerialUSBDriver
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#include "ch.h"
+#include "hal.h"
+
+#include "shell.h"
+#include "chprintf.h"
+
+
+#include "USB.h"
+
+#include "USB_API.h"
+
+int main(void) {
+  /*
+   * System initializations.
+   * - HAL initialization, this also initializes the configured device drivers
+   *   and performs the board-specific initializations.
+   * - Kernel initialization, the main() function becomes a thread and the
+   *   RTOS is active.
+   */
+  halInit();
+  chSysInit();
+
+  /*
+   * Activates the USB driver and then the USB bus pull-up on D+.
+   */
+  myUSBinit();
+
+  
+  while (TRUE) { 
+    send((BaseSequentialStream *)&SDU1, 'A');
+    chThdSleepMilliseconds(4000);
+    send((BaseSequentialStream *)&SDU1,receive((BaseSequentialStream *)&SDU1));
+  }
+
+
+}

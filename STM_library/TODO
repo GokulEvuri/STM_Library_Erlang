@@ -1,0 +1,53 @@
+Create a Scheduler [Done]
+Define Scheduler States [Progress]
+Write a compare data function, Define StartByte, returns boolean values
+Write getInterrupt() method to return boolean 1 if user activates radio control
+Define how data needs to be sent when available from sensors like size for each sensor data needs to be used
+
+## main.c
+ read 2 bytes from usb
+
+
+
+
+ check the buffer
+       in first byte and second byte
+
+       FB 	     	 SB		Meaning
+       00000000		 00000000	0
+       00000000		 00000000	1
+       00000000		 00000000	2
+       00000000		 00000000	3
+       00000000		 00000000	4
+       00000000		 00000000	5
+       00000000		 00000000	6
+       00000000		 00000000	7
+       00000000		 00000000	8
+       00000000		 00000000	9
+
+0 -- Host Connected send confirmation data -- A
+
+
+
+a -- send character 'c' in binary
+%%
+
+       FB 	     	 SB		Meaning
+       00000000		 00000000	A
+       00000000		 00000000	B
+       00000000		 00000000	C
+       00000000		 00000000	D
+       00000000		 00000000	E
+       00000000		 00000000	F
+       00000000		 00000000	G
+       00000000		 00000000	H
+       00000000		 00000000	I
+       00000000		 00000000	J
+
+0 -- Host Connected send confirmation data -- 0a
+
+
+0a -- send character 'c' in binary
+
+
+Schedule
